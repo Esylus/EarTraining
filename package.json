@@ -8,12 +8,13 @@
     "start": "node app"
   },
   "dependencies": {
-    "express": "*",
-    "mongoose": "*",
     "bcryptjs": "*",
-    "cors": "*",
-    "jsonwebtoken": "*",
     "body-parser": "*",
+    "cors": "*",
+    "express": "*",
+    "jsonwebtoken": "*",
+    "mongoose": "*",
+    "npm": "^5.8.0",
     "passport": "*",
     "passport-jwt": "*"
   },
@@ -26,5 +27,8 @@
   "bugs": {
     "url": "https://github.com/Esylus/EarTraining/issues"
   },
-  "homepage": "https://github.com/Esylus/EarTraining#readme"
+  "homepage": "https://github.com/Esylus/EarTraining#readme",
+  "devDependencies": {
+    "@angular/cli": "^1.7.3"
+  }
 }
