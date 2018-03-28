@@ -1,7 +1,10 @@
+//---User class contains db schema and db access methods
+
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const config = require('../config/database');
 
+//--------Info to store---------------------
 const UserSchema = mongoose.Schema({
     name: {
         type: String,
@@ -21,8 +24,10 @@ const UserSchema = mongoose.Schema({
     }
 });
 
+//----------------Export schema to use in sub-router-----
 const User = module.exports = mongoose.model('User', UserSchema);
 
+//---------------Export DB helper methods---------------
 module.exports.getUserById = function(id, callback){
     User.findById(id, callback);
 }
@@ -42,3 +47,17 @@ module.exports.addUser = function(newUser, callback){
         })
     });
 }
+
+// validate submitted password to database
+module.exports.comparePassword = function(candidatePassword, hash, callback){
+    bcrypt.compare(candidatePassword, hash, function(err, isMatch){
+        if(err) throw err;
+        callback(null, isMatch);
+    });
+};
+
+
+
+
+
+
