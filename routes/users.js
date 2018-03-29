@@ -35,7 +35,6 @@ router.post('/authenticate', function(req, res, next){
         if(!user){
             return res.json({success: false, msg: 'User not found'});
         }
-        console.log('made it here');
         //------Check if passwords match, if they do, create token and respond to front
         User.comparePassword(password, user.password, function(err, isMatch){
             if(err) throw err;
