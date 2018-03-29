@@ -47,6 +47,10 @@ app.get('/', function (req, res) {
     res.send('Invalid Enpoint');
 });
 
+app.get('*', function(req, res){
+    res.sendFile(path.join(__dirname, 'public/index.html'));
+});
+
 //-------------------------Tells express to listen to a port-------------
 
 app.listen(port, function(){

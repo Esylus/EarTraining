@@ -63,7 +63,7 @@ router.post('/authenticate', function(req, res, next){
 
 }); 
 
-// Profile route
+// Profile route - passport.authenticate ensures you need jwt token to get stuff
 router.get('/profile', passport.authenticate('jwt', {session:false}), function(req, res, next){
     res.json({user: req.user});
 }); 
