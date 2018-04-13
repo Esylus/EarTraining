@@ -1,0 +1,162 @@
+
+.bgContact 
+{
+    width: 100%;
+    height: 100vh;
+    box-sizing: border-box;
+    background: url('../../../assets/images/contact.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+
+
+  /* -----------------------------------Contact Form----------------------------- */
+
+ #getInTouch {
+	font-size: 300%;
+	text-shadow: 7px 2px 6px #000000;       /*Shadow is 1px horz, 1px vert, 10px width, color black*/
+	color: #FFF;
+    margin-top: 30px;
+    margin-bottom: 15px; 
+}
+
+  .modal-dialog{
+    margin: 0 auto;
+    padding-top: 50px;
+    padding-bottom: 25px;
+  }
+
+  .main-section{
+      margin: 0 auto;
+    padding: 0;
+}
+
+
+/* Main container */
+.modal-content {
+    background-color:#000;
+    opacity: 0.95;
+    padding: 0 18px;
+    box-shadow: 0px 0px 3px #848484; 
+}
+
+
+
+/* Spacing between inputs */
+.form-group {
+    margin-top: 25px;
+}
+
+/* Input shaping */
+.form-group input {
+    height: 42px;
+    border-radius: 5px;
+    border: 0;
+    font-size: 18px;
+    padding-left: 54px;
+}
+
+/* Textbox shaping */
+.form-group textarea {
+
+    border-radius: 5px;
+    border: 0;
+    font-size: 18px;
+    padding-left: 54px;
+}
+
+.form-group::before{
+    font-family: 'Font Awesome\ 5 Free';
+    content: "\f007";
+    position: absolute;
+    font-size: 22px;
+    color: #555e60;
+    left: 28px;
+    padding-top: 4px;
+}
+
+/* Email */
+.form-group:nth-child(2)::before {
+    content: "\f0e0";
+}
+
+/* Phone */
+.form-group:nth-child(3)::before {
+    content: "\f3cd";
+}
+
+/* Message */
+.form-group:last-of-type::before {
+    content: "\f11c";
+}
+
+button {
+    width: 40%;
+    margin: 5px 0 25px;
+}
+
+.btn {
+    background-color:#122C48;
+    color: #fff;
+    font-size: 19px;
+    padding: 7px 10px;
+    border-radius: 5px;
+    /* border-bottom: 4px solid rgb(34, 75, 129); */
+}
+
+.btn:hover, .btn:focus {
+    background-color: #166EDF !important;
+    /* border-bottom: 4px solid rgb(16, 43, 73); */
+}
+
+.svg-inline--fa {
+    font-size: 20px; 
+     margin-right: 7px;   
+}
+
+.response p {
+	font-size: 100%;
+    font-weight: 500;
+	text-shadow: 7px 2px 6px #000;    
+	color: #FFF;
+}
+
+ .social a {
+    font-size: 2em;
+    padding-left : 0.5rem;
+        margin-bottom: 40px;
+}
+
+.fa-github{
+    color: #3b5998;
+    font-size: 1.5em;
+}
+.fa-soundcloud{
+    color: #517fa8;
+    font-size: 1.5em;
+}
+.fa-linkedin{
+    color: #395fdd;
+    font-size: 1.5em;
+}
+
+.fa-github:hover,
+.fa-linkedin:hover,
+.fa-soundcloud:hover {
+ color: #d5d5d5;
+}
+
+
+/*-------------------------------------------Media Queries ---------------------------*/
+
+@media (max-width: 992px) {
+
+}
+
+@media (max-width: 768px) {
+
+}
+
+@media (max-width: 576px) {
+
+}
