@@ -26,7 +26,7 @@ const users = require('./routes/users'); // sub-routing variable to use below
 
 //--------------Basic express setup---------------------------------
 const app = express();  // create instance to use
-const port = 3000;
+const port = process.env.PORT || 8080;
 const send = require('./routes/send');  // subrouter ADD ME
 
 //--------------Body parser + cors Middleware-------------------------------
