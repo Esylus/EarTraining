@@ -56,6 +56,13 @@ app.get('*', function(req, res){
     res.sendFile(path.join(__dirname, 'public/index.html'));
 });
 
+// Handling these redirects in Angular but below redirect worked as well
+
+app.get('/*', function (req, res, next) {
+    res.sendFile('public/index.html', {root: __dirname });
+});
+
+
 //-------------------------Tells express to listen to a port-------------
 
 app.listen(port, function(){

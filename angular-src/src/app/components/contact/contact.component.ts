@@ -13,7 +13,7 @@ export class ContactComponent implements OnInit {
   email: string;
   phone: string;
   message: string;
-
+  response = '';
 
   constructor(private sendMsgService: SendMsgService) { }
 
@@ -29,14 +29,20 @@ export class ContactComponent implements OnInit {
       phone: this.phone,
       message: this.message
     }    
+    this.response = 'Message sent';
+    this.name='';
+    this.email='';
+    this.phone='';
+    this.message='';
     console.log(message);
 
     this.sendMsgService.sendMessage(message).subscribe(data =>{
       if(data.success){
         console.log('Message sent - Thanks');
-        window.location.reload();
       } else {
         console.log('There was an error');
+        this.response = 'Error';
+
       }
     });
 
