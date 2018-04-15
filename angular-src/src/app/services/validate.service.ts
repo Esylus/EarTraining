@@ -27,13 +27,13 @@ export class ValidateService {
   validateLogin(user){
     if(user.username == undefined || user.username.length == 0 ||
        user.password == undefined || user.password == 0)
-    { 
-      return false;
-    } 
-    else 
-    {
-      return true;
-    }
+      { 
+        return false;
+      } 
+      else 
+      {
+        return true;
+      }
     
   }
 

@@ -5,6 +5,9 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const passport = require('passport');
 const mongoose = require('mongoose');
+const nodemailer = require('nodemailer');
+
+
 
 //-----------------------------DB Routing---------------
 const config = require('./config/database');
@@ -24,6 +27,7 @@ const users = require('./routes/users'); // sub-routing variable to use below
 //--------------Basic express setup---------------------------------
 const app = express();  // create instance to use
 const port = 3000;
+const send = require('./routes/send');  // subrouter ADD ME
 
 //--------------Body parser + cors Middleware-------------------------------
 app.use(bodyParser.json());
@@ -39,6 +43,7 @@ require('./config/passport')(passport);
 app.use(express.static(path.join(__dirname, 'public'))); 
 
 //--------------------Set path to sub router---------------------
+app.use('/send', send);     // subrouter ADD ME
 app.use('/users', users);  // routing to users folder where another js
 //app.use('/scores', scores); etc...
 
@@ -50,6 +55,13 @@ app.get('/', function (req, res) {
 app.get('*', function(req, res){
     res.sendFile(path.join(__dirname, 'public/index.html'));
 });
+
+// Handling these redirects in Angular but below redirect worked as well
+
+app.get('/*', function (req, res, next) {
+    res.sendFile('public/index.html', {root: __dirname });
+});
+
 
 //-------------------------Tells express to listen to a port-------------
 

@@ -15,9 +15,11 @@ import { ContactComponent } from './components/contact/contact.component';
 
 import { ValidateService } from './services/validate.service';
 import { AuthService } from './services/auth.service';
+import {SendMsgService} from './services/send-msg.service';
 
 import { FlashMessagesModule} from 'angular2-flash-messages';
 import { AuthGuard } from './guards/auth.guard';
+import { NotfoundComponent } from './components/notfound/notfound.component';
 
 const appRoutes: Routes = [
   { path:'', component: HomeComponent },
@@ -27,6 +29,8 @@ const appRoutes: Routes = [
   { path:'dashboard', component: DashboardComponent, canActivate:[AuthGuard]},
   { path:'profile', component: ProfileComponent, canActivate:[AuthGuard]},
   { path:'contact', component: ContactComponent },
+  {path: '404', component: NotfoundComponent},
+  {path: '**', redirectTo: '/404'}
 ];
 
 @NgModule({
@@ -38,7 +42,8 @@ const appRoutes: Routes = [
     HomeComponent,
     DashboardComponent,
     ProfileComponent,
-    ContactComponent
+    ContactComponent,
+    NotfoundComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +52,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     FlashMessagesModule.forRoot()
   ],
-  providers: [ValidateService, AuthService, AuthGuard],
+  providers: [ValidateService, AuthService, AuthGuard, SendMsgService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
